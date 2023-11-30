@@ -9,13 +9,13 @@ import RestaurantMenu from "./components/RestaurantMenu";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Shimmer from "./components/Shimmer";
 import ContactUs from "./components/ContactUs";
-// import Grocery from "./components/Grocery";
+import Grocery from "./components/Grocery";
 import UserContext from "./utils/UserContext";
 import { Provider } from "react-redux";
 import appStore from "./utils/appStore";
 import Cart from "./components/Cart";
 
-const LazyGrocery = lazy(() => import("./components/Grocery"));
+const Grocery = lazy(() => import("./components/Grocery"));
 
 const About = lazy(() => import("./components/About"));
 
@@ -67,7 +67,7 @@ const appRouter = createBrowserRouter([
         path: "/grocery",
         element: (
           <Suspense fallback={<Shimmer />}>
-            <LazyGrocery />
+            <Grocery />
           </Suspense>
         ),
       },
