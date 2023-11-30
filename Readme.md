@@ -17,7 +17,7 @@ Contributions to this project are highly encouraged! If you'd like to contribute
 
 <img width="1512" alt="Screenshot 1" src="https://github.com/binitshrest/Food-Delivary-App-using-React.js/blob/main/assets/Screenshot%202023-11-30%20115652.png">
 
-<img width="354" alt="Screenshot 2" src="https://github.com/binitshrest/Food-Delivary-App-using-React.js/blob/main/assets/Screenshot%202023-11-30%20115922.png">
+<img width="1512" alt="Screenshot 2" src="https://github.com/binitshrest/Food-Delivary-App-using-React.js/blob/main/assets/Screenshot%202023-11-30%20115922.png">
 <img width="1512" alt="Screenshot 3" src="https://github.com/binitshrest/Food-Delivary-App-using-React.js/blob/main/assets/Screenshot%202023-11-30%20120054.png">
 <img width="1512" alt="Screenshot 4" src="https://github.com/binitshrest/Food-Delivary-App-using-React.js/blob/main/assets/Screenshot%202023-11-30%20120132.png">
 <img width="1512" alt="Screenshot 5" src="https://github.com/binitshrest/Food-Delivary-App-using-React.js/blob/main/assets/Screenshot%202023-11-30%20120244.png">
