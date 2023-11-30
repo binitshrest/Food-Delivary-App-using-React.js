@@ -14,13 +14,18 @@ This GitHub repository contains an Swiggy clone project that aims to replicate s
 Contributions to this project are highly encouraged! If you'd like to contribute by fixing bugs, adding features, or improving the overall codebase, please feel free to fork this repository, make your changes, and submit a pull request. We welcome your contributions and ideas to help make this Airbnb clone even better.
 
 ## Images for reference:
-
+### Home Page and Restaurants.
 <img width="1512" alt="Screenshot 1" src="https://github.com/binitshrest/Food-Delivary-App-using-React.js/blob/main/assets/Screenshot%202023-11-30%20115652.png">
 
+### Search Bar restaurant of your choice.
 <img width="1512" alt="Screenshot 2" src="https://github.com/binitshrest/Food-Delivary-App-using-React.js/blob/main/assets/Screenshot%202023-11-30%20115922.png">
+
+### Restaurant Menu with Accordion feature
 <img width="1512" alt="Screenshot 3" src="https://github.com/binitshrest/Food-Delivary-App-using-React.js/blob/main/assets/Screenshot%202023-11-30%20120054.png">
 <img width="1512" alt="Screenshot 4" src="https://github.com/binitshrest/Food-Delivary-App-using-React.js/blob/main/assets/Screenshot%202023-11-30%20120132.png">
 <img width="1512" alt="Screenshot 5" src="https://github.com/binitshrest/Food-Delivary-App-using-React.js/blob/main/assets/Screenshot%202023-11-30%20120244.png">
+
+### Cart System for adding and removal of items
 <img width="1512" alt="Screenshot 6" src="https://github.com/binitshrest/Food-Delivary-App-using-React.js/blob/main/assets/Screenshot%202023-11-30%20120507.png">
 <img width="1512" alt="Screenshot 7" src="https://github.com/binitshrest/Food-Delivary-App-using-React.js/blob/main/assets/Screenshot%202023-11-30%20120551.png">
 
