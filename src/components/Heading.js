@@ -27,8 +27,8 @@ const Heading = () => {
 
   return (
     <div className="flex justify-between bg-pink-100 shadow-lg mb-2">
-      <div className="logo-container">
-        <img className="w-32" src={LOGO_LINK} />
+      <div className="mt-4 ml-10 left-3">
+        <img className="w-10" src={LOGO_LINK} />
       </div>
       <div className="flex items-center">
         <ul className="flex p-4 m-4">

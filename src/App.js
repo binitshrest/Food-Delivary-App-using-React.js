@@ -42,6 +42,7 @@ const AppLayout = () => {
   );
 };
 
+//Outlet
 const appRouter = createBrowserRouter([
   {
     path: "/",
