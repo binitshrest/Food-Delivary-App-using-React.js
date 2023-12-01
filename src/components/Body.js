@@ -1,9 +1,11 @@
 import { useEffect, useState, useContext } from "react";
 import { Link } from "react-router-dom";
-import useOnlineStatus from "../utils/useOnlineStatus";
 import Shimmer from "./Shimmer";
 import RestaurantCard, { withpromotedLabel } from "./RestaurantCard";
 import UserContext from "../utils/UserContext";
+import BannerCard from "./BannerCard";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
 const Body = () => {
   //local state variable - super powerful variable
@@ -33,22 +35,17 @@ const Body = () => {
       json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
-
   //custom hook
-  const onlineStatus = useOnlineStatus();
-
-  if (onlineStatus === false)
-    return (
-      <h1>Looks like you're offline please check your internet connection;</h1>
-    );
+  // const bannerInfo = useBanner();
 
   const { loggedInUser, setUserName } = useContext(UserContext);
 
   return listOfRestaurants.length === 0 && listOfRestaurants ? ( //ternary operator
     <Shimmer />
   ) : (
-    <div className="body">
-      <div className="filter flex justify-between">
+    <div className="body w-9/12 mx-auto">
+      <BannerCard />
+      <div className="filter flex justify-between items-center">
         <div className="search m-4 p-4">
           <input
             type="text"
@@ -71,7 +68,7 @@ const Body = () => {
               setFilteredRestaurant(filteredRestaurant);
             }}
           >
-            Search
+            <FontAwesomeIcon icon={faMagnifyingGlass} size="sm" />
           </button>
         </div>
         <div className="search m-4 p-4 flex items-center">
@@ -96,7 +93,7 @@ const Body = () => {
           />
         </div>
       </div>
-
+      <br />
       <div className="flex flex-wrap">
         {filteredRestaurant.map((restaurant) => (
           <Link

@@ -1,18 +1,18 @@
 import { LOGO_LINK } from "../utils/constants";
 import { useEffect, useState, useContext } from "react";
 import { Link } from "react-router-dom";
-import useOnlineStatus from "../utils/useOnlineStatus";
 import UserContext from "../utils/UserContext";
 import { useSelector } from "react-redux";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
 const Heading = () => {
   // let btnName = "Login";
-  const [btnName, setBtnName] = useState("Login"); //1st para is varaible 2nd is setter fn
+  const [btnName, setBtnName] = useState("Sign In"); //1st para is varaible 2nd is setter fn
 
   //if no dependency array => useEffect is called on every render
   //if dependency array is empty = [] => useEffect is called on initial render(just once)
   //if dependency array is [btnName] => called everytime btnName is updated
-  const onlineStatus = useOnlineStatus();
 
   const { loggedInUser } = useContext(UserContext);
   // console.log(data);
@@ -26,26 +26,28 @@ const Heading = () => {
   console.log(cartItems);
 
   return (
-    <div className="flex justify-between bg-pink-100 shadow-lg mb-2">
-      <div className="mt-4 ml-10 left-3">
+    <div className="flex justify-between bg-white shadow-lg mb-2">
+      <div className="mt-4 ml-28">
         <img className="w-10" src={LOGO_LINK} />
       </div>
       <div className="flex items-center">
         <ul className="flex p-4 m-4">
           <li className="px-4 font-medium text-lg hover:text-orange-400">
-            Online Status: {onlineStatus ? "🟢" : "🔴"}
-          </li>
-          <li className="px-4 font-medium text-lg hover:text-orange-400">
             <Link to="/">Home</Link>
           </li>
-          <li className="px-4 font-medium text-lg hover:text-orange-400">
-            <Link to="/about">About Us</Link>
+          <li className="px-4 font-medium text-lg hover:text-orange-400 items-center">
+            <Link to="/search">
+              <FontAwesomeIcon icon={faMagnifyingGlass} size="sm" />
+              <span className="mx-3">Search</span>
+            </Link>
           </li>
           <li className="px-4 font-medium text-lg hover:text-orange-400">
-            <Link to="/contact">Contact Us</Link>
+            <Link to="/contact">
+              Offers<sup className="m-1 text-orange-400">New</sup>
+            </Link>
           </li>
           <li className="px-4 font-medium text-lg hover:text-orange-400">
-            <Link to="/grocery">Grocery</Link>
+            <Link to="/grocery">Help</Link>
           </li>
           <li className="px-4 font-medium text-lg hover:text-orange-400">
             <Link to="/cart">Cart - ({cartItems.length} items)</Link>
@@ -53,7 +55,9 @@ const Heading = () => {
           <button
             className="login px-4 font-medium text-lg hover:text-orange-400"
             onClick={() => {
-              btnName === "Login" ? setBtnName("Logout") : setBtnName("Login");
+              btnName === "Sign In"
+                ? setBtnName("Sign Out")
+                : setBtnName("Sign In");
               console.log(btnName);
             }}
           >

@@ -2,7 +2,7 @@ import React, { lazy, Suspense, useState, useEffect } from "react";
 import ReactDOM from "react-dom/client";
 import Heading from "./components/Heading";
 import Body from "./components/Body";
-import About from "./components/About";
+
 import ContactUs from "./components/ContactUs";
 import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu";
@@ -14,10 +14,9 @@ import UserContext from "./utils/UserContext";
 import { Provider } from "react-redux";
 import appStore from "./utils/appStore";
 import Cart from "./components/Cart";
+import Searchpage from "./components/Searchpage";
 
 const Grocery = lazy(() => import("./components/Grocery"));
-
-const About = lazy(() => import("./components/About"));
 
 const AppLayout = () => {
   const [userName, setUserName] = useState();
@@ -53,12 +52,8 @@ const appRouter = createBrowserRouter([
         element: <Body />,
       },
       {
-        path: "/about",
-        element: (
-          <Suspense fallback={<Shimmer />}>
-            <About />
-          </Suspense>
-        ),
+        path: "/search",
+        element: <Searchpage />,
       },
       {
         path: "/contact",
