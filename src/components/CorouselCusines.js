@@ -1,3 +1,4 @@
+import useCusines from "../utils/useCusines";
 import React, { useRef, useState } from "react";
 import { Virtual, Navigation, Pagination } from "swiper/modules";
 // Direct React component imports
@@ -7,39 +8,41 @@ import { Swiper, SwiperSlide } from "swiper/swiper-react.mjs";
 import "swiper/swiper.scss"; // core Swiper
 import "swiper/modules/navigation.scss"; // Navigation module
 import "swiper/modules/pagination.scss"; // Pagination module
-import useBanner from "../utils/useBanner";
-import BannerCard from "./BannerCard";
 
-//import './styles.css';
+import useCusines from "../utils/useCusines";
+import CusinesCard from "./CusinesCard";
 
-export default function Corousels() {
+const CorouselCusines = () => {
   const [swiperRef, setSwiperRef] = useState(null);
   // Create array with 500 slides
   const [slides, setSlides] = useState(
     Array.from({ length: 12 }).map((_, index) => `Slide ${index + 1}`)
   );
 
-  const bannerInfo = useBanner();
+  const cusinesInfo = useCusines();
+  console.log(cusinesInfo);
   return (
     <>
       <Swiper
         modules={[Virtual, Navigation, Pagination]}
         onSwiper={setSwiperRef}
-        slidesPerView={3}
+        slidesPerView={6}
         centeredSlides={false}
-        spaceBetween={30}
+        spaceBetween={0}
         // pagination={{
         //   type: "fraction",
         // }}
         navigation={true}
         virtual
       >
-        {bannerInfo?.map((info, index) => (
+        {cusinesInfo?.map((info, index) => (
           <SwiperSlide key={index} virtualIndex={index}>
-            <BannerCard imageId={info.imageId} />
+            <CusinesCard imageId={info.imageId} />
           </SwiperSlide>
         ))}
       </Swiper>
     </>
   );
-}
+};
+
+export default CorouselCusines;
