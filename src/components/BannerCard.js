@@ -1,7 +1,16 @@
-const BannerCard = () => {
+import { CDN_LINK } from "../utils/constants";
+
+const BannerCard = (props) => {
+  const { imageId } = props;
+  console.log(props);
+
   return (
-    <div>
-      <h1 className="text-3xl font-bold my-6 ml-6">Best offers for you</h1>
+    <div className="m-5 h-[250px] w-[700px]">
+      <img
+        alt="Banner-logo"
+        className="res-logo rounded-lg h-[250px] w-[600px] "
+        src={CDN_LINK + imageId}
+      />
     </div>
   );
 };

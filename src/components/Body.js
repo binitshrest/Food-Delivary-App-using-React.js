@@ -6,6 +6,8 @@ import UserContext from "../utils/UserContext";
 import BannerCard from "./BannerCard";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import useBanner from "../utils/useBanner";
+import Corousels from "./Corousels";
 
 const Body = () => {
   //local state variable - super powerful variable
@@ -36,7 +38,7 @@ const Body = () => {
     );
   };
   //custom hook
-  // const bannerInfo = useBanner();
+  const bannerInfo = useBanner();
 
   const { loggedInUser, setUserName } = useContext(UserContext);
 
@@ -44,7 +46,14 @@ const Body = () => {
     <Shimmer />
   ) : (
     <div className="body w-9/12 mx-auto">
-      <BannerCard />
+      {/* <Corousels /> */}
+      <h1 className="text-3xl font-bold my-6 ml-6">Best offers for you</h1>
+      <div className="flex flex-nowrap">
+        {bannerInfo?.map((info) => (
+          <BannerCard imageId={info.imageId} />
+        ))}
+      </div>
+
       <div className="filter flex justify-between items-center">
         <div className="search m-4 p-4">
           <input
