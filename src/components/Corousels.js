@@ -25,9 +25,31 @@ export default function Corousels() {
       <Swiper
         modules={[Virtual, Navigation, Pagination]}
         onSwiper={setSwiperRef}
-        slidesPerView={3}
+        slidesPerView={2}
         centeredSlides={false}
-        spaceBetween={30}
+        spaceBetween={10}
+        breakpoints={{
+          1525: {
+            slidesPerView: 3,
+            spaceBetween: 20,
+          },
+          1499: {
+            slidesPerView: 3,
+            spaceBetween: 20,
+          },
+          1369: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          1000: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          500: {
+            slidesPerView: 1,
+            spaceBetween: 20,
+          },
+        }}
         // pagination={{
         //   type: "fraction",
         // }}

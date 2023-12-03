@@ -29,6 +29,28 @@ const CorouselCusines = () => {
         slidesPerView={6}
         centeredSlides={false}
         spaceBetween={0}
+        breakpoints={{
+          1050: {
+            slidesPerView: 6,
+            spaceBetween: 20,
+          },
+          900: {
+            slidesPerView: 5,
+            spaceBetween: 20,
+          },
+          800: {
+            slidesPerView: 4,
+            spaceBetween: 20,
+          },
+          650: {
+            slidesPerView: 3,
+            spaceBetween: 20,
+          },
+          440: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+        }}
         // pagination={{
         //   type: "fraction",
         // }}

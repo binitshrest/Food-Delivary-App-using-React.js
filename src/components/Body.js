@@ -49,7 +49,7 @@ const Body = () => {
       <h1 className="text-3xl font-bold my-6 ml-6">What's in your mind?</h1>
       {/* 2nd crousel */}
       <CorouselCusines />
-      <div className="filter flex justify-between items-center">
+      <div className="flex justify-between items-center">
         <div className="search m-4 p-4">
           <input
             type="text"
@@ -85,7 +85,7 @@ const Body = () => {
               setListOfRestaurants(filteredList);
             }}
           >
-            <h4>Filter Restro with less than 3 star Rating</h4>
+            <h4>Filter by 3 Rating</h4>
           </button>
         </div>
         <div className="search m-4 p-4 flex items-center">

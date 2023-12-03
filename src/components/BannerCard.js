@@ -5,10 +5,10 @@ const BannerCard = (props) => {
   console.log(props);
 
   return (
-    <div className="m-5 h-[250px] w-[375px]">
+    <div className="m-5 h-[15.625rem] w-[23.438rem]">
       <img
         alt="Banner-logo"
-        className="res-logo rounded-lg h-[250px] w-[375px] "
+        className="res-logo rounded-lg"
         src={CDN_LINK + imageId}
       />
     </div>

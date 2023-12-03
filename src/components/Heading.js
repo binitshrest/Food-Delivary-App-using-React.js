@@ -28,13 +28,12 @@ const Heading = () => {
   return (
     <div className="flex justify-between bg-white shadow-lg mb-2">
       <div className="mt-4 ml-28">
-        <img className="w-10" src={LOGO_LINK} />
+        <Link to="/">
+          <img className="w-10" src={LOGO_LINK} />
+        </Link>
       </div>
       <div className="flex items-center">
-        <ul className="flex p-4 m-4">
-          <li className="px-4 font-medium text-lg hover:text-orange-400">
-            <Link to="/">Home</Link>
-          </li>
+        <ul className="hidden lg:flex p-4 m-4">
           <li className="px-4 font-medium text-lg hover:text-orange-400 items-center">
             <Link to="/search">
               <FontAwesomeIcon icon={faMagnifyingGlass} size="sm" />
