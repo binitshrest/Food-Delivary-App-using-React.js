@@ -13,16 +13,19 @@ This GitHub repository contains an Swiggy clone project that aims to replicate s
 
 Contributions to this project are highly encouraged! If you'd like to contribute by fixing bugs, adding features, or improving the overall codebase, please feel free to fork this repository, make your changes, and submit a pull request. We welcome your contributions and ideas to help make this Airbnb clone even better.
 
+## Videos for reference:
+
+[![Watch the Video](https://github.com/binitshrest/Food-Delivary-App-using-React.js/blob/swiggy-clone-master/assets/Screenshot%202023-12-02%20194751.png)](https://www.youtube.com/watch?v=Iowwxxt1sM0)
+
 ## Images for reference:
 
-<img width="1512" alt="Screenshot 1" src="https://github.com/binitshrest/Food-Delivary-App-using-React.js/blob/main/assets/Screenshot%202023-11-30%20115652.png">
+<img width="1512" alt="Screenshot 1" src="https://github.com/binitshrest/Food-Delivary-App-using-React.js/blob/swiggy-clone-master/assets/Screenshot%202023-12-02%20210608.png">
 
-<img width="354" alt="Screenshot 2" src="https://github.com/binitshrest/Food-Delivary-App-using-React.js/blob/main/assets/Screenshot%202023-11-30%20115922.png">
-<img width="1512" alt="Screenshot 3" src="https://github.com/binitshrest/Food-Delivary-App-using-React.js/blob/main/assets/Screenshot%202023-11-30%20120054.png">
-<img width="1512" alt="Screenshot 4" src="https://github.com/binitshrest/Food-Delivary-App-using-React.js/blob/main/assets/Screenshot%202023-11-30%20120132.png">
-<img width="1512" alt="Screenshot 5" src="https://github.com/binitshrest/Food-Delivary-App-using-React.js/blob/main/assets/Screenshot%202023-11-30%20120244.png">
-<img width="1512" alt="Screenshot 6" src="https://github.com/binitshrest/Food-Delivary-App-using-React.js/blob/main/assets/Screenshot%202023-11-30%20120507.png">
-<img width="1512" alt="Screenshot 7" src="https://github.com/binitshrest/Food-Delivary-App-using-React.js/blob/main/assets/Screenshot%202023-11-30%20120551.png">
+<img width="1512" alt="Screenshot 2" src="https://github.com/binitshrest/Food-Delivary-App-using-React.js/blob/swiggy-clone-master/assets/Screenshot%202023-12-02%20210730.png">
 
-![React-Food-Delivary-App](https://github.com/binitshrest/Food-Delivary-App-using-React.js/assets/53391715/f0703c35-a609-4a32-af26-0054ad28a231)
-[![Watch the video](Project Video)](https://drive.google.com/file/d/1bh7jyA4z3xvQwUpHJYmsVTWywNx8088l/view?usp=drive_link)
+<img width="1512" alt="Screenshot 3" src="https://github.com/binitshrest/Food-Delivary-App-using-React.js/blob/swiggy-clone-master/assets/Screenshot%202023-12-02%20211150.png">
+<img width="1512" alt="Screenshot 4" src="https://github.com/binitshrest/Food-Delivary-App-using-React.js/blob/swiggy-clone-master/assets/Screenshot%202023-12-02%20211324.png">
+<img width="1512" alt="Screenshot 5" src="https://github.com/binitshrest/Food-Delivary-App-using-React.js/blob/swiggy-clone-master/assets/Screenshot%202023-12-02%20211545.png">
+<img width="1512" alt="Screenshot 6" src="https://github.com/binitshrest/Food-Delivary-App-using-React.js/blob/swiggy-clone-master/assets/Screenshot%202023-12-02%20211641.png">
+<img width="1512" alt="Screenshot 7" src="https://github.com/binitshrest/Food-Delivary-App-using-React.js/blob/swiggy-clone-master/assets/Screenshot%202023-12-02%20211806.png">
+
