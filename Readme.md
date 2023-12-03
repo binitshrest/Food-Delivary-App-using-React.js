@@ -13,6 +13,10 @@ This GitHub repository contains an Swiggy clone project that aims to replicate s
 
 Contributions to this project are highly encouraged! If you'd like to contribute by fixing bugs, adding features, or improving the overall codebase, please feel free to fork this repository, make your changes, and submit a pull request. We welcome your contributions and ideas to help make this Airbnb clone even better.
 
+# Website link:
+
+<a href = "https://swiggyclone-binit.netlify.app/">https://swiggyclone-binit.netlify.app/</a>
+
 ## Videos for reference:
 
 [![Watch the Video](https://github.com/binitshrest/Food-Delivary-App-using-React.js/blob/swiggy-clone-master/assets/Screenshot%202023-12-02%20194751.png)](https://www.youtube.com/watch?v=Iowwxxt1sM0)
@@ -20,23 +24,29 @@ Contributions to this project are highly encouraged! If you'd like to contribute
 //Click above photo to watch a embeded video link.
 
 ## Images for reference:
+
 # HomePage and Crousels
+
 <img width="1512" alt="Screenshot 1" src="https://github.com/binitshrest/Food-Delivary-App-using-React.js/blob/swiggy-clone-master/assets/Screenshot%202023-12-02%20210608.png">
 
 # Filtering and Restaurants Cards
+
 <img width="1512" alt="Screenshot 2" src="https://github.com/binitshrest/Food-Delivary-App-using-React.js/blob/swiggy-clone-master/assets/Screenshot%202023-12-02%20210730.png">
 
 # Restaurant Menu and Category
+
 <img width="1512" alt="Screenshot 3" src="https://github.com/binitshrest/Food-Delivary-App-using-React.js/blob/swiggy-clone-master/assets/Screenshot%202023-12-02%20211150.png">
 
 <img width="1512" alt="Screenshot 5" src="https://github.com/binitshrest/Food-Delivary-App-using-React.js/blob/swiggy-clone-master/assets/Screenshot%202023-12-02%20211545.png">
 
-# Adding Items to cart feature 
+# Adding Items to cart feature
+
 <img width="1512" alt="Screenshot 4" src="https://github.com/binitshrest/Food-Delivary-App-using-React.js/blob/swiggy-clone-master/assets/Screenshot%202023-12-02%20211324.png">
 
+# Cart System Adding and Removing Carts
 
-# Cart System Adding and Removing Carts 
 <img width="1512" alt="Screenshot 6" src="https://github.com/binitshrest/Food-Delivary-App-using-React.js/blob/swiggy-clone-master/assets/Screenshot%202023-12-02%20211641.png">
 
-# Search Bar 
+# Search Bar
+
 <img width="1512" alt="Screenshot 7" src="https://github.com/binitshrest/Food-Delivary-App-using-React.js/blob/swiggy-clone-master/assets/Screenshot%202023-12-02%20211806.png">
