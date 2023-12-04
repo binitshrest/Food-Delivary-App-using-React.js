@@ -13,7 +13,7 @@ This GitHub repository contains an Swiggy clone project that aims to replicate s
 
 Contributions to this project are highly encouraged! If you'd like to contribute by fixing bugs, adding features, or improving the overall codebase, please feel free to fork this repository, make your changes, and submit a pull request. We welcome your contributions and ideas to help make this Airbnb clone even better.
 
-# Website link:
+# Website link: (Due to live network call used in app, in order to run this app, we have to use CORS extension.
 
 <a href = "https://swiggyclone-binit.netlify.app/">https://swiggyclone-binit.netlify.app/</a>
 
