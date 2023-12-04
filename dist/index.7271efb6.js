@@ -27519,9 +27519,11 @@ parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "CDN_LINK", ()=>CDN_LINK);
 parcelHelpers.export(exports, "LOGO_LINK", ()=>LOGO_LINK);
 parcelHelpers.export(exports, "Menu_API", ()=>Menu_API);
+parcelHelpers.export(exports, "Swiggy_API", ()=>Swiggy_API);
 const CDN_LINK = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/";
 const LOGO_LINK = "https://cdn.worldvectorlogo.com/logos/swiggy-1.svg";
-const Menu_API = "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.933996&lng=77.6979885&restaurantId="; // there are two types of exports
+const Menu_API = "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.933996&lng=77.6979885&restaurantId=";
+const Swiggy_API = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.933996&lng=77.6979885&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"; // there are two types of exports
  // 1) named export
  // 2) default export
 
@@ -61193,6 +61195,10 @@ var _corousels = require("./Corousels");
 var _corouselsDefault = parcelHelpers.interopDefault(_corousels);
 var _corouselCusines = require("./CorouselCusines");
 var _corouselCusinesDefault = parcelHelpers.interopDefault(_corouselCusines);
+var _topRestaurantCarousels = require("./TopRestaurantCarousels");
+var _topRestaurantCarouselsDefault = parcelHelpers.interopDefault(_topRestaurantCarousels);
+var _applyfilters = require("./Applyfilters");
+var _applyfiltersDefault = parcelHelpers.interopDefault(_applyfilters);
 var _s = $RefreshSig$();
 const Body = ()=>{
     _s();
@@ -61210,49 +61216,89 @@ const Body = ()=>{
         const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.933996&lng=77.6979885&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
         const json = await data.json(); //converting data into json;
         // console.log(json);
-        setListOfRestaurants(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-        setFilteredRestaurant(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+        setListOfRestaurants(json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+        setFilteredRestaurant(json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     };
     //custom hook
     const { loggedInUser, setUserName } = (0, _react.useContext)((0, _userContextDefault.default));
     return listOfRestaurants.length === 0 && listOfRestaurants ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerDefault.default), {}, void 0, false, {
         fileName: "src/components/Body.js",
-        lineNumber: 44,
+        lineNumber: 46,
         columnNumber: 5
     }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "body w-9/12 mx-auto",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                className: "text-3xl font-bold my-6 ml-6",
+                className: "text-3xl font-bold my-4 ml-6",
                 children: "Best offers for you"
-            }, void 0, false, {
-                fileName: "src/components/Body.js",
-                lineNumber: 47,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _corouselsDefault.default), {}, void 0, false, {
-                fileName: "src/components/Body.js",
-                lineNumber: 48,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                className: "text-3xl font-bold my-6 ml-6",
-                children: "What's in your mind?"
             }, void 0, false, {
                 fileName: "src/components/Body.js",
                 lineNumber: 49,
                 columnNumber: 7
             }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _corouselCusinesDefault.default), {}, void 0, false, {
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _corouselsDefault.default), {}, void 0, false, {
+                fileName: "src/components/Body.js",
+                lineNumber: 50,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                className: "text-3xl font-bold my-4 ml-6",
+                children: "What's in your mind?"
+            }, void 0, false, {
                 fileName: "src/components/Body.js",
                 lineNumber: 51,
                 columnNumber: 7
             }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _corouselCusinesDefault.default), {}, void 0, false, {
+                fileName: "src/components/Body.js",
+                lineNumber: 53,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("hr", {
+                className: "w-12/12 h-[0.08rem] mx-auto my-4 bg-gray-100 border-0 rounded md:my-10 dark:bg-gray-200 mt-10"
+            }, void 0, false, {
+                fileName: "src/components/Body.js",
+                lineNumber: 54,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                className: "text-3xl font-bold my-4 ml-6",
+                children: "Top restaurant chains in Bangalore"
+            }, void 0, false, {
+                fileName: "src/components/Body.js",
+                lineNumber: 55,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _topRestaurantCarouselsDefault.default), {}, void 0, false, {
+                fileName: "src/components/Body.js",
+                lineNumber: 58,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("hr", {
+                className: "w-12/12 h-[0.08rem] mx-auto my-4 bg-gray-100 border-0 rounded md:my-10 dark:bg-gray-200 mt-10"
+            }, void 0, false, {
+                fileName: "src/components/Body.js",
+                lineNumber: 59,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                className: "text-3xl font-bold my-4 ml-6",
+                children: "Restaurants with online food delivery in Bangalore"
+            }, void 0, false, {
+                fileName: "src/components/Body.js",
+                lineNumber: 60,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _applyfiltersDefault.default), {}, void 0, false, {
+                fileName: "src/components/Body.js",
+                lineNumber: 63,
+                columnNumber: 7
+            }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "flex justify-between items-center",
+                className: "flex items-center",
                 children: [
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        className: "search m-4 p-4",
+                        className: "search m-2 p-2",
                         children: [
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
                                 type: "text",
@@ -61263,11 +61309,11 @@ const Body = ()=>{
                                 }
                             }, void 0, false, {
                                 fileName: "src/components/Body.js",
-                                lineNumber: 54,
+                                lineNumber: 66,
                                 columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                                className: "px-4 py-2 bg-green-100 m-4 rounded-lg border",
+                                className: "px-2 py-2 bg-green-100 m-2 rounded-lg border",
                                 onClick: ()=>{
                                     console.log(searchText);
                                     const filteredRestaurant = listOfRestaurants.filter((res)=>//lowering the case of input and api value
@@ -61280,22 +61326,22 @@ const Body = ()=>{
                                     size: "sm"
                                 }, void 0, false, {
                                     fileName: "src/components/Body.js",
-                                    lineNumber: 75,
+                                    lineNumber: 87,
                                     columnNumber: 13
                                 }, undefined)
                             }, void 0, false, {
                                 fileName: "src/components/Body.js",
-                                lineNumber: 62,
+                                lineNumber: 74,
                                 columnNumber: 11
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/Body.js",
-                        lineNumber: 53,
+                        lineNumber: 65,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        className: "search m-4 p-4 flex items-center",
+                        className: "search m-2 p-2 flex items-center",
                         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
                             className: "px-4 py-2 bg-gray-100 rounded-lg",
                             onClick: ()=>{
@@ -61306,54 +61352,28 @@ const Body = ()=>{
                                 children: "Filter by 3 Rating"
                             }, void 0, false, {
                                 fileName: "src/components/Body.js",
-                                lineNumber: 88,
+                                lineNumber: 100,
                                 columnNumber: 13
                             }, undefined)
                         }, void 0, false, {
                             fileName: "src/components/Body.js",
-                            lineNumber: 79,
+                            lineNumber: 91,
                             columnNumber: 11
                         }, undefined)
                     }, void 0, false, {
                         fileName: "src/components/Body.js",
-                        lineNumber: 78,
-                        columnNumber: 9
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        className: "search m-4 p-4 flex items-center",
-                        children: [
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
-                                className: "p-2",
-                                children: "Username: "
-                            }, void 0, false, {
-                                fileName: "src/components/Body.js",
-                                lineNumber: 92,
-                                columnNumber: 11
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                                className: "border border-black p-2 rounded-xl",
-                                value: loggedInUser,
-                                onChange: (e)=>setUserName(e.target.value)
-                            }, void 0, false, {
-                                fileName: "src/components/Body.js",
-                                lineNumber: 93,
-                                columnNumber: 11
-                            }, undefined)
-                        ]
-                    }, void 0, true, {
-                        fileName: "src/components/Body.js",
-                        lineNumber: 91,
+                        lineNumber: 90,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/Body.js",
-                lineNumber: 52,
+                lineNumber: 64,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
                 fileName: "src/components/Body.js",
-                lineNumber: 100,
+                lineNumber: 114,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -61365,29 +61385,29 @@ const Body = ()=>{
                             resData: restaurant
                         }, void 0, false, {
                             fileName: "src/components/Body.js",
-                            lineNumber: 111,
+                            lineNumber: 125,
                             columnNumber: 17
                         }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(RestaurantCardPromoted, {
                             resData: restaurant
                         }, void 0, false, {
                             fileName: "src/components/Body.js",
-                            lineNumber: 113,
+                            lineNumber: 127,
                             columnNumber: 17
                         }, undefined)
                     }, restaurant.info.id, false, {
                         fileName: "src/components/Body.js",
-                        lineNumber: 103,
+                        lineNumber: 117,
                         columnNumber: 11
                     }, undefined))
             }, void 0, false, {
                 fileName: "src/components/Body.js",
-                lineNumber: 101,
+                lineNumber: 115,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/Body.js",
-        lineNumber: 46,
+        lineNumber: 48,
         columnNumber: 5
     }, undefined);
 };
@@ -61402,7 +61422,7 @@ $RefreshReg$(_c, "Body");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","./Shimmer":"g6ZGj","./RestaurantCard":"bMboU","../utils/UserContext":"c5vgB","@fortawesome/react-fontawesome":"clIT3","@fortawesome/free-solid-svg-icons":"5lkdy","./Corousels":"7GTjB","./CorouselCusines":"d7157","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"g6ZGj":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","./Shimmer":"g6ZGj","./RestaurantCard":"bMboU","../utils/UserContext":"c5vgB","@fortawesome/react-fontawesome":"clIT3","@fortawesome/free-solid-svg-icons":"5lkdy","./Corousels":"7GTjB","./CorouselCusines":"d7157","./TopRestaurantCarousels":"3L9Px","./Applyfilters":"a5B8t","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"g6ZGj":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$0b04 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -61414,7 +61434,7 @@ parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 const Shimmer = ()=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "mt-[100px] flex flex-wrap",
+        className: "mt-[100px] ml-[50px] flex flex-wrap",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "shimmer-card m-[5px] p-[5px] w-[280px] h-[430] bg-gray-200",
@@ -70952,7 +70972,233 @@ $RefreshReg$(_c, "CusinesCard");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","../utils/constants":"hB8jg","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"dZ839":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","../utils/constants":"hB8jg","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"3L9Px":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$d0e1 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$d0e1.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _useTopRestro = require("../utils/useTopRestro");
+var _useTopRestroDefault = parcelHelpers.interopDefault(_useTopRestro);
+var _restaurantCard = require("./RestaurantCard");
+var _restaurantCardDefault = parcelHelpers.interopDefault(_restaurantCard);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _modules = require("swiper/modules");
+// Direct React component imports
+var _swiperReactMjs = require("swiper/swiper-react.mjs");
+// Styles must use direct files imports
+var _swiperScss = require("swiper/swiper.scss"); // core Swiper
+var _navigationScss = require("swiper/modules/navigation.scss"); // Navigation module
+var _paginationScss = require("swiper/modules/pagination.scss"); // Pagination module
+var _s = $RefreshSig$();
+const TopRestaurantCarousel = ()=>{
+    _s();
+    const [swiperRef, setSwiperRef] = (0, _react.useState)(null);
+    // Create array with 500 slides
+    const [slides, setSlides] = (0, _react.useState)(Array.from({
+        length: 12
+    }).map((_, index)=>`Slide ${index + 1}`));
+    const topRestro = (0, _useTopRestroDefault.default)();
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _swiperReactMjs.Swiper), {
+            modules: [
+                (0, _modules.Virtual),
+                (0, _modules.Navigation),
+                (0, _modules.Pagination)
+            ],
+            onSwiper: setSwiperRef,
+            slidesPerView: 2,
+            centeredSlides: false,
+            spaceBetween: 10,
+            breakpoints: {
+                1525: {
+                    slidesPerView: 4,
+                    spaceBetween: 20
+                },
+                1499: {
+                    slidesPerView: 3,
+                    spaceBetween: 20
+                },
+                1369: {
+                    slidesPerView: 2,
+                    spaceBetween: 20
+                },
+                1000: {
+                    slidesPerView: 2,
+                    spaceBetween: 20
+                },
+                500: {
+                    slidesPerView: 1,
+                    spaceBetween: 20
+                }
+            },
+            // pagination={{
+            //   type: "fraction",
+            // }}
+            navigation: true,
+            virtual: true,
+            children: topRestro?.map((restaurant, index)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _swiperReactMjs.SwiperSlide), {
+                    virtualIndex: index,
+                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _restaurantCardDefault.default), {
+                        resData: restaurant
+                    }, void 0, false, {
+                        fileName: "src/components/TopRestaurantCarousels.js",
+                        lineNumber: 60,
+                        columnNumber: 13
+                    }, undefined)
+                }, index, false, {
+                    fileName: "src/components/TopRestaurantCarousels.js",
+                    lineNumber: 59,
+                    columnNumber: 11
+                }, undefined))
+        }, void 0, false, {
+            fileName: "src/components/TopRestaurantCarousels.js",
+            lineNumber: 24,
+            columnNumber: 7
+        }, undefined)
+    }, void 0, false);
+};
+_s(TopRestaurantCarousel, "vfKU3T2VLld+NeVgIevcfOUOB1c=", false, function() {
+    return [
+        (0, _useTopRestroDefault.default)
+    ];
+});
+_c = TopRestaurantCarousel;
+exports.default = TopRestaurantCarousel;
+var _c;
+$RefreshReg$(_c, "TopRestaurantCarousel");
+
+  $parcel$ReactRefreshHelpers$d0e1.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","../utils/useTopRestro":"F92cj","./RestaurantCard":"bMboU","react":"21dqq","swiper/modules":"9ktz6","swiper/swiper-react.mjs":"ai8bf","swiper/swiper.scss":"iXKG4","swiper/modules/navigation.scss":"aVdUF","swiper/modules/pagination.scss":"47rMB","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"F92cj":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$be72 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$be72.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _constants = require("./constants");
+var _s = $RefreshSig$();
+const useTopRestro = ()=>{
+    _s();
+    const [topRestro, setTopRestro] = (0, _react.useState)(null);
+    (0, _react.useEffect)(()=>{
+        fetchData();
+    }, []);
+    const fetchData = async ()=>{
+        const data = await fetch((0, _constants.Swiggy_API));
+        const json = await data.json();
+        setTopRestro(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+    };
+    return topRestro;
+};
+_s(useTopRestro, "viFe6iTKfQEMpJUIlF5A/0xmgFs=");
+exports.default = useTopRestro;
+
+  $parcel$ReactRefreshHelpers$be72.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react":"21dqq","./constants":"hB8jg","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"iXKG4":[function() {},{}],"aVdUF":[function() {},{}],"47rMB":[function() {},{}],"a5B8t":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$decd = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$decd.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _reactFontawesome = require("@fortawesome/react-fontawesome");
+var _freeSolidSvgIcons = require("@fortawesome/free-solid-svg-icons");
+const Applyfilters = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "flex ml-4 space-x-4",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                className: "h-10 w-24 rounded-2xl border border-solid bg-white shadow-md",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                        className: "p-2",
+                        children: "Filter"
+                    }, void 0, false, {
+                        fileName: "src/components/Applyfilters.js",
+                        lineNumber: 8,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactFontawesome.FontAwesomeIcon), {
+                        icon: (0, _freeSolidSvgIcons.faArrowUpZA),
+                        style: {
+                            color: "#000000"
+                        }
+                    }, void 0, false, {
+                        fileName: "src/components/Applyfilters.js",
+                        lineNumber: 9,
+                        columnNumber: 9
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/components/Applyfilters.js",
+                lineNumber: 7,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                className: "h-10 w-24 rounded-2xl border border-solid bg-white shadow-md",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                        className: "p-2",
+                        children: "Sort By"
+                    }, void 0, false, {
+                        fileName: "src/components/Applyfilters.js",
+                        lineNumber: 12,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactFontawesome.FontAwesomeIcon), {
+                        icon: (0, _freeSolidSvgIcons.faChevronDown),
+                        style: {
+                            color: "#000000"
+                        }
+                    }, void 0, false, {
+                        fileName: "src/components/Applyfilters.js",
+                        lineNumber: 13,
+                        columnNumber: 9
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/components/Applyfilters.js",
+                lineNumber: 11,
+                columnNumber: 7
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/components/Applyfilters.js",
+        lineNumber: 6,
+        columnNumber: 5
+    }, undefined);
+};
+_c = Applyfilters;
+exports.default = Applyfilters;
+var _c;
+$RefreshReg$(_c, "Applyfilters");
+
+  $parcel$ReactRefreshHelpers$decd.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","@fortawesome/react-fontawesome":"clIT3","@fortawesome/free-solid-svg-icons":"5lkdy"}],"dZ839":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$58e7 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
