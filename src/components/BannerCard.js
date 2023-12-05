@@ -5,7 +5,7 @@ const BannerCard = (props) => {
   console.log(props);
 
   return (
-    <div className="m-5 h-[15.625rem] w-[23.438rem]">
+    <div className="m-5 h-[15rem] w-[23.438rem]">
       <img
         alt="Banner-logo"
         className="res-logo rounded-lg"

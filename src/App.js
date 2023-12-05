@@ -3,20 +3,20 @@ import ReactDOM from "react-dom/client";
 import Heading from "./components/Heading";
 import Body from "./components/Body";
 
-import ContactUs from "./components/ContactUs";
+import Offers from "./components/Offers";
 import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Shimmer from "./components/Shimmer";
-import ContactUs from "./components/ContactUs";
-import Grocery from "./components/Grocery";
+import Help from "./components/Help";
 import UserContext from "./utils/UserContext";
 import { Provider } from "react-redux";
 import appStore from "./utils/appStore";
 import Cart from "./components/Cart";
 import Searchpage from "./components/Searchpage";
+import Offers from "./components/Offers";
 
-const Grocery = lazy(() => import("./components/Grocery"));
+const Grocery = lazy(() => import("./components/Help"));
 
 const AppLayout = () => {
   const [userName, setUserName] = useState();
@@ -56,14 +56,14 @@ const appRouter = createBrowserRouter([
         element: <Searchpage />,
       },
       {
-        path: "/contact",
-        element: <ContactUs />,
+        path: "/offers",
+        element: <Offers />,
       },
       {
-        path: "/grocery",
+        path: "/help",
         element: (
           <Suspense fallback={<Shimmer />}>
-            <Grocery />
+            <Help />
           </Suspense>
         ),
       },

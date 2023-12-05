@@ -1,7 +1,7 @@
 import useTopRestro from "../utils/useTopRestro";
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, { withpromotedLabel } from "./RestaurantCard";
 import { useState } from "react";
-
+import { Link } from "react-router-dom";
 import React, { useRef, useState } from "react";
 import { Virtual, Navigation, Pagination } from "swiper/modules";
 // Direct React component imports
@@ -11,6 +11,7 @@ import { Swiper, SwiperSlide } from "swiper/swiper-react.mjs";
 import "swiper/swiper.scss"; // core Swiper
 import "swiper/modules/navigation.scss"; // Navigation module
 import "swiper/modules/pagination.scss"; // Pagination module
+import { Link } from "react-router-dom";
 
 const TopRestaurantCarousel = () => {
   const [swiperRef, setSwiperRef] = useState(null);
@@ -19,6 +20,7 @@ const TopRestaurantCarousel = () => {
     Array.from({ length: 12 }).map((_, index) => `Slide ${index + 1}`)
   );
   const topRestro = useTopRestro();
+  const RestaurantCardPromoted = withpromotedLabel(RestaurantCard);
   return (
     <>
       <Swiper
@@ -56,8 +58,20 @@ const TopRestaurantCarousel = () => {
         virtual
       >
         {topRestro?.map((restaurant, index) => (
-          <SwiperSlide key={index} virtualIndex={index}>
-            <RestaurantCard resData={restaurant} />
+          <SwiperSlide key={restaurant.info.id} virtualIndex={index}>
+            <Link
+              key={restaurant.info.id}
+              to={"/restaurants/" + restaurant.info.id}
+            >
+              {
+                /* if the restaurant is promoted then add a promote label to it. */
+                restaurant.info.aggregatedDiscountInfoV3 === undefined ? (
+                  <RestaurantCard resData={restaurant} />
+                ) : (
+                  <RestaurantCardPromoted resData={restaurant} />
+                )
+              }
+            </Link>
           </SwiperSlide>
         ))}
       </Swiper>

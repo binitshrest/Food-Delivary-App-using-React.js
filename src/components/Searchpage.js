@@ -24,7 +24,7 @@ const Searchpage = () => {
         Popular Cusines
       </div>
       <div>
-
+          
       </div>
     </div>
   );

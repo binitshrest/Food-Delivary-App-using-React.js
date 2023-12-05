@@ -9,10 +9,13 @@ import Corousels from "./Corousels";
 import CorouselCusines from "./CorouselCusines";
 import TopRestaurantCarousels from "./TopRestaurantCarousels";
 import Applyfilters from "./Applyfilters";
+import FilterPopsUp from "./FilterPopsUp";
+import { Swiggy_API } from "../utils/constants";
+import useListOfRestro from "../utils/useListOfRestro";
+import useFilteredRestro from "../utils/useFilteredRestro";
 
 const Body = () => {
   //local state variable - super powerful variable
-  const [listOfRestaurants, setListOfRestaurants] = useState([]);
   const [filteredRestaurant, setFilteredRestaurant] = useState([]);
   const [searchText, setSearchText] = useState("");
 
@@ -25,22 +28,16 @@ const Body = () => {
   }, []);
 
   const fetchData = async () => {
-    const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.933996&lng=77.6979885&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
-    );
-
+    const data = await fetch(Swiggy_API);
     const json = await data.json(); //converting data into json;
-    // console.log(json);
-    setListOfRestaurants(
-      json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    );
     setFilteredRestaurant(
       json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
   //custom hook
+  const listOfRestaurants = useListOfRestro();
 
-  const { loggedInUser, setUserName } = useContext(UserContext);
+  // const { loggedInUser, setUserName } = useContext(UserContext);
 
   return listOfRestaurants.length === 0 && listOfRestaurants ? ( //ternary operator
     <Shimmer />
@@ -61,18 +58,19 @@ const Body = () => {
         Restaurants with online food delivery in Bangalore
       </h1>
       <Applyfilters />
+      {/* <FilterPopsUp /> */}
       <div className="flex items-center">
         <div className="search m-2 p-2">
           <input
             type="text"
-            className="border border-solid border-black h-[40px] w-[250px] rounded-2xl p-4  "
+            className="border shadow-md h-[40px] w-[250px] rounded-2xl p-4 outline-none text-base font-semibold text-gray-600"
             value={searchText}
             onChange={(e) => {
               setSearchText(e.target.value);
             }}
           />
           <button
-            className="px-2 py-2 bg-green-100 m-2 rounded-lg border"
+            className="px-2 py-2 rounded-2xl border border-solid mx-4 bg-white shadow-md"
             onClick={() => {
               console.log(searchText);
               const filteredRestaurant = listOfRestaurants.filter((res) =>
@@ -84,10 +82,12 @@ const Body = () => {
               setFilteredRestaurant(filteredRestaurant);
             }}
           >
+            <span className="mr-2">Search</span>
             <FontAwesomeIcon icon={faMagnifyingGlass} size="sm" />
           </button>
         </div>
-        <div className="search m-2 p-2 flex items-center">
+        {/* Code for ratings */}
+        {/* <div className="search m-2 p-2 flex items-center">
           <button
             className="px-4 py-2 bg-gray-100 rounded-lg"
             onClick={() => {
@@ -99,7 +99,7 @@ const Body = () => {
           >
             <h4>Filter by 3 Rating</h4>
           </button>
-        </div>
+        </div> */}
         {/* <div className="search m-2 p-2 flex items-center">
           <label className="p-2">Username: </label>
           <input
@@ -113,7 +113,7 @@ const Body = () => {
 
       <br />
       <div className="flex flex-wrap">
-        {filteredRestaurant.map((restaurant) => (
+        {filteredRestaurant?.map((restaurant) => (
           <Link
             key={restaurant.info.id}
             to={"/restaurants/" + restaurant.info.id}

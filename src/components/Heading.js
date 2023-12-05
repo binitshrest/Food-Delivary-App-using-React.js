@@ -6,7 +6,6 @@ import { useSelector } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
-
 const Heading = () => {
   // let btnName = "Login";
   const [btnName, setBtnName] = useState("Sign In"); //1st para is varaible 2nd is setter fn
@@ -42,12 +41,12 @@ const Heading = () => {
             </Link>
           </li>
           <li className="px-4 font-medium text-lg hover:text-orange-400">
-            <Link to="/contact">
+            <Link to="/offers">
               Offers<sup className="m-1 text-orange-400">New</sup>
             </Link>
           </li>
           <li className="px-4 font-medium text-lg hover:text-orange-400">
-            <Link to="/grocery">Help</Link>
+            <Link to="/help">Help</Link>
           </li>
           <li className="px-4 font-medium text-lg hover:text-orange-400">
             <Link to="/cart">Cart - ({cartItems.length} items)</Link>
