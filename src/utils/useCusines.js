@@ -3,7 +3,7 @@ import { Swiggy_API } from "./constants";
 
 const useCusines = () => {
 
-  const [cusinesInfo, setCusinesInfo] = useState(null);
+  const [cusinesInfo, setCusinesInfo] = useState([]);
 
   useEffect(() => {
     fetchData();

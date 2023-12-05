@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Swiggy_API } from "./constants";
 
 const useTopRestro = () => {
-  const [topRestro, setTopRestro] = useState(null);
+  const [topRestro, setTopRestro] = useState([]);
 
   useEffect(() => {
     fetchData();

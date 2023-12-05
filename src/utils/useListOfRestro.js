@@ -12,6 +12,8 @@ const useListOfRestro = () => {
     const data = await fetch(Swiggy_API);
     const json = await data.json();
 
+    const array1 = json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+    const array2 = 
     setListOfRestaurants(
       json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );

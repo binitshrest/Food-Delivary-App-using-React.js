@@ -1,18 +1,19 @@
-import { useEffect, useState, useContext } from "react";
+import { useEffect, useState } from "react";
+import useBanner from "../utils/useBanner";
+import useCusines from "../utils/useCusines";
+import useTopRestro from "../utils/useTopRestro";
 import { Link } from "react-router-dom";
 import Shimmer from "./Shimmer";
 import RestaurantCard, { withpromotedLabel } from "./RestaurantCard";
-import UserContext from "../utils/UserContext";
+// import UserContext from "../utils/UserContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import Corousels from "./Corousels";
 import CorouselCusines from "./CorouselCusines";
 import TopRestaurantCarousels from "./TopRestaurantCarousels";
 import Applyfilters from "./Applyfilters";
-import FilterPopsUp from "./FilterPopsUp";
 import { Swiggy_API } from "../utils/constants";
 import useListOfRestro from "../utils/useListOfRestro";
-import useFilteredRestro from "../utils/useFilteredRestro";
 
 const Body = () => {
   //local state variable - super powerful variable
@@ -35,29 +36,38 @@ const Body = () => {
     );
   };
   //custom hook
+  const bannerInfo = useBanner();
+  const cusinesInfo = useCusines();
+  const topRestro = useTopRestro();
   const listOfRestaurants = useListOfRestro();
 
   // const { loggedInUser, setUserName } = useContext(UserContext);
 
-  return listOfRestaurants.length === 0 && listOfRestaurants ? ( //ternary operator
+  return bannerInfo.length === 0 &&
+    cusinesInfo.length === 0 &&
+    topRestro.length === 0 &&
+    listOfRestaurants.length === 0 ? (
     <Shimmer />
   ) : (
     <div className="body w-9/12 mx-auto">
       <h1 className="text-3xl font-bold my-4 ml-6">Best offers for you</h1>
-      <Corousels />
+      <Corousels bannerInfo={bannerInfo} />
       <h1 className="text-3xl font-bold my-4 ml-6">What's in your mind?</h1>
       {/* 2nd crousel */}
-      <CorouselCusines />
+      <CorouselCusines cusinesInfo={cusinesInfo} />
       <hr className="w-12/12 h-[0.08rem] mx-auto my-4 bg-gray-100 border-0 rounded md:my-10 dark:bg-gray-200 mt-10" />
       <h1 className="text-3xl font-bold my-4 ml-6">
         Top restaurant chains in Bangalore
       </h1>
-      <TopRestaurantCarousels />
+      <TopRestaurantCarousels topRestro={topRestro} />
       <hr className="w-12/12 h-[0.08rem] mx-auto my-4 bg-gray-100 border-0 rounded md:my-10 dark:bg-gray-200 mt-10" />
       <h1 className="text-3xl font-bold my-4 ml-6">
         Restaurants with online food delivery in Bangalore
       </h1>
-      <Applyfilters />
+      <Applyfilters
+        listOfRestaurants={listOfRestaurants}
+        filteredRestaurant={filteredRestaurant}
+      />
       {/* <FilterPopsUp /> */}
       <div className="flex items-center">
         <div className="search m-2 p-2">

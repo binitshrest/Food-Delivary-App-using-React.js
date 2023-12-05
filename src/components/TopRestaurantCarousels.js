@@ -13,13 +13,13 @@ import "swiper/modules/navigation.scss"; // Navigation module
 import "swiper/modules/pagination.scss"; // Pagination module
 import { Link } from "react-router-dom";
 
-const TopRestaurantCarousel = () => {
+const TopRestaurantCarousel = ({ topRestro }) => {
   const [swiperRef, setSwiperRef] = useState(null);
   // Create array with 500 slides
   const [slides, setSlides] = useState(
     Array.from({ length: 12 }).map((_, index) => `Slide ${index + 1}`)
   );
-  const topRestro = useTopRestro();
+
   const RestaurantCardPromoted = withpromotedLabel(RestaurantCard);
   return (
     <>

@@ -12,14 +12,14 @@ import "swiper/modules/pagination.scss"; // Pagination module
 import useCusines from "../utils/useCusines";
 import CusinesCard from "./CusinesCard";
 
-const CorouselCusines = () => {
+const CorouselCusines = ({ cusinesInfo }) => {
   const [swiperRef, setSwiperRef] = useState(null);
   // Create array with 500 slides
   const [slides, setSlides] = useState(
     Array.from({ length: 12 }).map((_, index) => `Slide ${index + 1}`)
   );
 
-  const cusinesInfo = useCusines();
+  // const cusinesInfo = useCusines();
   console.log(cusinesInfo);
   return (
     <>

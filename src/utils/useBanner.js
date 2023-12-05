@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 const useBanner = () => {
-  const [bannerInfo, setBannerInfo] = useState(null);
+  const [bannerInfo, setBannerInfo] = useState([]);
 
   useEffect(() => {
     fetchData();

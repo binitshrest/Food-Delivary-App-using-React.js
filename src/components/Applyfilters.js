@@ -2,15 +2,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUpZA } from "@fortawesome/free-solid-svg-icons";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import { useState, useEffect } from "react";
-import FilterPopsUp from "./FilterPopsUp";
-import useListOfRestro from "../utils/useListOfRestro";
-import useFilteredRestro from "../utils/useFilteredRestro";
-import { Swiggy_API } from "../utils/constants";
 
-const Applyfilters = () => {
+const Applyfilters = ({ listOfRestaurants }) => {
   const [openPops, setOpenPops] = useState(false);
-  // const [filteredRestaurant, setFilteredRestaurant] = useState([]);
-  const listOfRestaurants = useListOfRestro();
+  const [filterRestaurant, setFilterRestaurant] = useState([]);
   return (
     <div className="flex ml-4 space-x-4">
       <button
@@ -33,12 +28,12 @@ const Applyfilters = () => {
       </button>
       <button
         className="h-10 w-28 rounded-2xl border border-solid bg-white shadow-md"
-        // onClick={() => {
-        //   const filteredRestaurant = listOfRestaurants.filter(
-        //     (res) => res.info.avgRating > 4
-        //   );
-        //   setFilteredRestaurant(filteredRestaurant);
-        // }}
+        onClick={() => {
+          const filterRestaurant = listOfRestaurants.filter(
+            (res) => res.info.avgRating > 4
+          );
+          setFilterRestaurant(filterRestaurant);
+        }}
       >
         <span className="p-2">Rating 4.0+</span>
       </button>

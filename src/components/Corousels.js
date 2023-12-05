@@ -12,14 +12,14 @@ import BannerCard from "./BannerCard";
 
 //import './styles.css';
 
-export default function Corousels() {
+export default function Corousels({ bannerInfo }) {
   const [swiperRef, setSwiperRef] = useState(null);
   // Create array with 500 slides
   const [slides, setSlides] = useState(
     Array.from({ length: 12 }).map((_, index) => `Slide ${index + 1}`)
   );
 
-  const bannerInfo = useBanner();
+  // const bannerInfo = useBanner();
   return (
     <>
       <Swiper
