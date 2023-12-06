@@ -61208,6 +61208,8 @@ var _applyfiltersDefault = parcelHelpers.interopDefault(_applyfilters);
 var _constants = require("../utils/constants");
 var _useListOfRestro = require("../utils/useListOfRestro");
 var _useListOfRestroDefault = parcelHelpers.interopDefault(_useListOfRestro);
+var _useUpdateRestro = require("../utils/useUpdateRestro");
+var _useUpdateRestroDefault = parcelHelpers.interopDefault(_useUpdateRestro);
 var _s = $RefreshSig$();
 const Body = ()=>{
     _s();
@@ -61230,10 +61232,15 @@ const Body = ()=>{
     const cusinesInfo = (0, _useCusinesDefault.default)();
     const topRestro = (0, _useTopRestroDefault.default)();
     const listOfRestaurants = (0, _useListOfRestroDefault.default)();
+    // const updateRes = useUpdateRestro();
+    // const allRestro = listOfRestaurants.concat(updateRes);
+    // console.log(allRestro);
+    // console.log(listOfRestaurants);
+    // console.log(updateRes);
     // const { loggedInUser, setUserName } = useContext(UserContext);
     return bannerInfo.length === 0 && cusinesInfo.length === 0 && topRestro.length === 0 && listOfRestaurants.length === 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerDefault.default), {}, void 0, false, {
         fileName: "src/components/Body.js",
-        lineNumber: 50,
+        lineNumber: 57,
         columnNumber: 5
     }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "body w-9/12 mx-auto",
@@ -61243,14 +61250,14 @@ const Body = ()=>{
                 children: "Best offers for you"
             }, void 0, false, {
                 fileName: "src/components/Body.js",
-                lineNumber: 53,
+                lineNumber: 60,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _corouselsDefault.default), {
                 bannerInfo: bannerInfo
             }, void 0, false, {
                 fileName: "src/components/Body.js",
-                lineNumber: 54,
+                lineNumber: 61,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
@@ -61258,21 +61265,21 @@ const Body = ()=>{
                 children: "What's in your mind?"
             }, void 0, false, {
                 fileName: "src/components/Body.js",
-                lineNumber: 55,
+                lineNumber: 62,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _corouselCusinesDefault.default), {
                 cusinesInfo: cusinesInfo
             }, void 0, false, {
                 fileName: "src/components/Body.js",
-                lineNumber: 57,
+                lineNumber: 64,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("hr", {
                 className: "w-12/12 h-[0.08rem] mx-auto my-4 bg-gray-100 border-0 rounded md:my-10 dark:bg-gray-200 mt-10"
             }, void 0, false, {
                 fileName: "src/components/Body.js",
-                lineNumber: 58,
+                lineNumber: 65,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
@@ -61280,21 +61287,21 @@ const Body = ()=>{
                 children: "Top restaurant chains in Bangalore"
             }, void 0, false, {
                 fileName: "src/components/Body.js",
-                lineNumber: 59,
+                lineNumber: 66,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _topRestaurantCarouselsDefault.default), {
                 topRestro: topRestro
             }, void 0, false, {
                 fileName: "src/components/Body.js",
-                lineNumber: 62,
+                lineNumber: 69,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("hr", {
                 className: "w-12/12 h-[0.08rem] mx-auto my-4 bg-gray-100 border-0 rounded md:my-10 dark:bg-gray-200 mt-10"
             }, void 0, false, {
                 fileName: "src/components/Body.js",
-                lineNumber: 63,
+                lineNumber: 70,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
@@ -61302,15 +61309,15 @@ const Body = ()=>{
                 children: "Restaurants with online food delivery in Bangalore"
             }, void 0, false, {
                 fileName: "src/components/Body.js",
-                lineNumber: 64,
+                lineNumber: 71,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _applyfiltersDefault.default), {
-                listOfRestaurants: listOfRestaurants,
-                filteredRestaurant: filteredRestaurant
+                setFilteredRestaurant: setFilteredRestaurant,
+                listOfRestaurants: listOfRestaurants
             }, void 0, false, {
                 fileName: "src/components/Body.js",
-                lineNumber: 67,
+                lineNumber: 74,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -61327,7 +61334,7 @@ const Body = ()=>{
                             }
                         }, void 0, false, {
                             fileName: "src/components/Body.js",
-                            lineNumber: 74,
+                            lineNumber: 81,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -61345,7 +61352,7 @@ const Body = ()=>{
                                     children: "Search"
                                 }, void 0, false, {
                                     fileName: "src/components/Body.js",
-                                    lineNumber: 95,
+                                    lineNumber: 102,
                                     columnNumber: 13
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactFontawesome.FontAwesomeIcon), {
@@ -61353,29 +61360,29 @@ const Body = ()=>{
                                     size: "sm"
                                 }, void 0, false, {
                                     fileName: "src/components/Body.js",
-                                    lineNumber: 96,
+                                    lineNumber: 103,
                                     columnNumber: 13
                                 }, undefined)
                             ]
                         }, void 0, true, {
                             fileName: "src/components/Body.js",
-                            lineNumber: 82,
+                            lineNumber: 89,
                             columnNumber: 11
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/components/Body.js",
-                    lineNumber: 73,
+                    lineNumber: 80,
                     columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/components/Body.js",
-                lineNumber: 72,
+                lineNumber: 79,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
                 fileName: "src/components/Body.js",
-                lineNumber: 124,
+                lineNumber: 131,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -61387,29 +61394,29 @@ const Body = ()=>{
                             resData: restaurant
                         }, void 0, false, {
                             fileName: "src/components/Body.js",
-                            lineNumber: 135,
+                            lineNumber: 142,
                             columnNumber: 17
                         }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(RestaurantCardPromoted, {
                             resData: restaurant
                         }, void 0, false, {
                             fileName: "src/components/Body.js",
-                            lineNumber: 137,
+                            lineNumber: 144,
                             columnNumber: 17
                         }, undefined)
                     }, restaurant.info.id, false, {
                         fileName: "src/components/Body.js",
-                        lineNumber: 127,
+                        lineNumber: 134,
                         columnNumber: 11
                     }, undefined))
             }, void 0, false, {
                 fileName: "src/components/Body.js",
-                lineNumber: 125,
+                lineNumber: 132,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/Body.js",
-        lineNumber: 52,
+        lineNumber: 59,
         columnNumber: 5
     }, undefined);
 };
@@ -61431,7 +61438,7 @@ $RefreshReg$(_c, "Body");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../utils/useBanner":"dYX0l","../utils/useCusines":"4nycn","../utils/useTopRestro":"F92cj","react-router-dom":"9xmpe","./Shimmer":"g6ZGj","./RestaurantCard":"bMboU","@fortawesome/react-fontawesome":"clIT3","@fortawesome/free-solid-svg-icons":"5lkdy","./Corousels":"7GTjB","./CorouselCusines":"d7157","./TopRestaurantCarousels":"3L9Px","./Applyfilters":"a5B8t","../utils/constants":"hB8jg","../utils/useListOfRestro":"NNn6M","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"dYX0l":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../utils/useBanner":"dYX0l","../utils/useCusines":"4nycn","../utils/useTopRestro":"F92cj","react-router-dom":"9xmpe","./Shimmer":"g6ZGj","./RestaurantCard":"bMboU","@fortawesome/react-fontawesome":"clIT3","@fortawesome/free-solid-svg-icons":"5lkdy","./Corousels":"7GTjB","./CorouselCusines":"d7157","./TopRestaurantCarousels":"3L9Px","./Applyfilters":"a5B8t","../utils/constants":"hB8jg","../utils/useListOfRestro":"NNn6M","../utils/useUpdateRestro":"9G0HB","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"dYX0l":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$4735 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -71137,10 +71144,9 @@ var _reactFontawesome = require("@fortawesome/react-fontawesome");
 var _freeSolidSvgIcons = require("@fortawesome/free-solid-svg-icons");
 var _react = require("react");
 var _s = $RefreshSig$();
-const Applyfilters = ({ listOfRestaurants })=>{
+const Applyfilters = ({ listOfRestaurants, setFilteredRestaurant })=>{
     _s();
     const [openPops, setOpenPops] = (0, _react.useState)(false);
-    const [filterRestaurant, setFilterRestaurant] = (0, _react.useState)([]);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "flex ml-4 space-x-4",
         children: [
@@ -71153,7 +71159,7 @@ const Applyfilters = ({ listOfRestaurants })=>{
                         children: "Filter"
                     }, void 0, false, {
                         fileName: "src/components/Applyfilters.js",
-                        lineNumber: 15,
+                        lineNumber: 14,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactFontawesome.FontAwesomeIcon), {
@@ -71163,13 +71169,13 @@ const Applyfilters = ({ listOfRestaurants })=>{
                         }
                     }, void 0, false, {
                         fileName: "src/components/Applyfilters.js",
-                        lineNumber: 16,
+                        lineNumber: 15,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/Applyfilters.js",
-                lineNumber: 11,
+                lineNumber: 10,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -71180,7 +71186,7 @@ const Applyfilters = ({ listOfRestaurants })=>{
                         children: "Sort By"
                     }, void 0, false, {
                         fileName: "src/components/Applyfilters.js",
-                        lineNumber: 20,
+                        lineNumber: 19,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactFontawesome.FontAwesomeIcon), {
@@ -71190,13 +71196,13 @@ const Applyfilters = ({ listOfRestaurants })=>{
                         }
                     }, void 0, false, {
                         fileName: "src/components/Applyfilters.js",
-                        lineNumber: 21,
+                        lineNumber: 20,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/Applyfilters.js",
-                lineNumber: 19,
+                lineNumber: 18,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -71206,12 +71212,12 @@ const Applyfilters = ({ listOfRestaurants })=>{
                     children: "Fast Delivary"
                 }, void 0, false, {
                     fileName: "src/components/Applyfilters.js",
-                    lineNumber: 24,
+                    lineNumber: 23,
                     columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/components/Applyfilters.js",
-                lineNumber: 23,
+                lineNumber: 22,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -71221,31 +71227,31 @@ const Applyfilters = ({ listOfRestaurants })=>{
                     children: "New on Swiggy"
                 }, void 0, false, {
                     fileName: "src/components/Applyfilters.js",
-                    lineNumber: 27,
+                    lineNumber: 26,
                     columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/components/Applyfilters.js",
-                lineNumber: 26,
+                lineNumber: 25,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
                 className: "h-10 w-28 rounded-2xl border border-solid bg-white shadow-md",
                 onClick: ()=>{
-                    const filterRestaurant = listOfRestaurants.filter((res)=>res.info.avgRating > 4);
-                    setFilterRestaurant(filterRestaurant);
+                    const filterRestaurant = listOfRestaurants.filter((res)=>res.info.avgRating > 4.2);
+                    setFilteredRestaurant(filterRestaurant);
                 },
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                     className: "p-2",
-                    children: "Rating 4.0+"
+                    children: "Rating 4.2+"
                 }, void 0, false, {
                     fileName: "src/components/Applyfilters.js",
-                    lineNumber: 38,
+                    lineNumber: 37,
                     columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/components/Applyfilters.js",
-                lineNumber: 29,
+                lineNumber: 28,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -71255,12 +71261,12 @@ const Applyfilters = ({ listOfRestaurants })=>{
                     children: "Pure Veg"
                 }, void 0, false, {
                     fileName: "src/components/Applyfilters.js",
-                    lineNumber: 41,
+                    lineNumber: 40,
                     columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/components/Applyfilters.js",
-                lineNumber: 40,
+                lineNumber: 39,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -71270,12 +71276,12 @@ const Applyfilters = ({ listOfRestaurants })=>{
                     children: "Offers"
                 }, void 0, false, {
                     fileName: "src/components/Applyfilters.js",
-                    lineNumber: 44,
+                    lineNumber: 43,
                     columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/components/Applyfilters.js",
-                lineNumber: 43,
+                lineNumber: 42,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -71285,12 +71291,12 @@ const Applyfilters = ({ listOfRestaurants })=>{
                     children: "Rs.300-Rs.600"
                 }, void 0, false, {
                     fileName: "src/components/Applyfilters.js",
-                    lineNumber: 47,
+                    lineNumber: 46,
                     columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/components/Applyfilters.js",
-                lineNumber: 46,
+                lineNumber: 45,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -71300,22 +71306,22 @@ const Applyfilters = ({ listOfRestaurants })=>{
                     children: "Less than Rs.300"
                 }, void 0, false, {
                     fileName: "src/components/Applyfilters.js",
-                    lineNumber: 50,
+                    lineNumber: 49,
                     columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/components/Applyfilters.js",
-                lineNumber: 49,
+                lineNumber: 48,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/Applyfilters.js",
-        lineNumber: 10,
+        lineNumber: 9,
         columnNumber: 5
     }, undefined);
 };
-_s(Applyfilters, "a3Lz/+J1wR1LEj6e1+KC9FQOcAI=");
+_s(Applyfilters, "5W+XdeFKb4AjjJ0zKHHO3wjR1Cc=");
 _c = Applyfilters;
 exports.default = Applyfilters;
 var _c;
@@ -71347,8 +71353,9 @@ const useListOfRestro = ()=>{
     const fetchData = async ()=>{
         const data = await fetch((0, _constants.Swiggy_API));
         const json = await data.json();
-        const array1 = json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
-        const array2 = setListOfRestaurants(json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+        // const array1 = json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+        // const array2 =
+        setListOfRestaurants(json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     };
     return listOfRestaurants;
 };
@@ -71360,7 +71367,39 @@ exports.default = useListOfRestro;
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"./constants":"hB8jg","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"3oWem":[function(require,module,exports) {
+},{"./constants":"hB8jg","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"9G0HB":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$2d28 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$2d28.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _s = $RefreshSig$();
+const useUpdateRestro = ()=>{
+    _s();
+    const [updateRes, setUpdateRes] = (0, _react.useState)([]);
+    (0, _react.useEffect)(()=>{
+        fetchData();
+    }, []);
+    const fetchData = async ()=>{
+        const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/update");
+        const json = await data.json();
+        setUpdateRes(json?.data?.cards[0]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+    };
+    return updateRes;
+};
+_s(useUpdateRestro, "3fgmGnGtxqSYk47O/SfjujbJtwE=");
+exports.default = useUpdateRestro;
+
+  $parcel$ReactRefreshHelpers$2d28.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"3oWem":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$ae5c = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;

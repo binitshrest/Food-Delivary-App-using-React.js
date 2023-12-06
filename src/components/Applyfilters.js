@@ -3,9 +3,8 @@ import { faArrowUpZA } from "@fortawesome/free-solid-svg-icons";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import { useState, useEffect } from "react";
 
-const Applyfilters = ({ listOfRestaurants }) => {
+const Applyfilters = ({ listOfRestaurants, setFilteredRestaurant }) => {
   const [openPops, setOpenPops] = useState(false);
-  const [filterRestaurant, setFilterRestaurant] = useState([]);
   return (
     <div className="flex ml-4 space-x-4">
       <button
@@ -30,12 +29,12 @@ const Applyfilters = ({ listOfRestaurants }) => {
         className="h-10 w-28 rounded-2xl border border-solid bg-white shadow-md"
         onClick={() => {
           const filterRestaurant = listOfRestaurants.filter(
-            (res) => res.info.avgRating > 4
+            (res) => res.info.avgRating > 4.2
           );
-          setFilterRestaurant(filterRestaurant);
+          setFilteredRestaurant(filterRestaurant);
         }}
       >
-        <span className="p-2">Rating 4.0+</span>
+        <span className="p-2">Rating 4.2+</span>
       </button>
       <button className="h-10 w-24 rounded-2xl border border-solid bg-white shadow-md">
         <span className="p-2">Pure Veg</span>

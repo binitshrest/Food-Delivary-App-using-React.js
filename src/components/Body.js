@@ -14,6 +14,7 @@ import TopRestaurantCarousels from "./TopRestaurantCarousels";
 import Applyfilters from "./Applyfilters";
 import { Swiggy_API } from "../utils/constants";
 import useListOfRestro from "../utils/useListOfRestro";
+import useUpdateRestro from "../utils/useUpdateRestro";
 
 const Body = () => {
   //local state variable - super powerful variable
@@ -40,6 +41,12 @@ const Body = () => {
   const cusinesInfo = useCusines();
   const topRestro = useTopRestro();
   const listOfRestaurants = useListOfRestro();
+  // const updateRes = useUpdateRestro();
+
+  // const allRestro = listOfRestaurants.concat(updateRes);
+  // console.log(allRestro);
+  // console.log(listOfRestaurants);
+  // console.log(updateRes);
 
   // const { loggedInUser, setUserName } = useContext(UserContext);
 
@@ -65,8 +72,8 @@ const Body = () => {
         Restaurants with online food delivery in Bangalore
       </h1>
       <Applyfilters
+        setFilteredRestaurant={setFilteredRestaurant}
         listOfRestaurants={listOfRestaurants}
-        filteredRestaurant={filteredRestaurant}
       />
       {/* <FilterPopsUp /> */}
       <div className="flex items-center">
