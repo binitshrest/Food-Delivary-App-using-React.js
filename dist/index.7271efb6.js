@@ -27523,8 +27523,8 @@ parcelHelpers.export(exports, "Menu_API", ()=>Menu_API);
 parcelHelpers.export(exports, "Swiggy_API", ()=>Swiggy_API);
 const CDN_LINK = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/";
 const LOGO_LINK = "https://cdn.worldvectorlogo.com/logos/swiggy-1.svg";
-const Menu_API = "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.933996&lng=77.6979885&restaurantId=";
-const Swiggy_API = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.933996&lng=77.6979885&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"; // there are two types of exports
+const Menu_API = "https://corsproxy.io/?https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.933996&lng=77.6979885&restaurantId=";
+const Swiggy_API = "https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.933996&lng=77.6979885&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"; // there are two types of exports
  // 1) named export
  // 2) default export
 
@@ -61448,6 +61448,7 @@ try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _react = require("react");
+var _constants = require("./constants");
 var _s = $RefreshSig$();
 const useBanner = ()=>{
     _s();
@@ -61456,7 +61457,7 @@ const useBanner = ()=>{
         fetchData();
     }, []);
     const fetchData = async ()=>{
-        const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.933996&lng=77.6979885&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
+        const data = await fetch((0, _constants.Swiggy_API));
         const json = await data.json();
         setBannerInfo(json?.data?.cards[0]?.card?.card?.gridElements?.infoWithStyle?.info);
     };
@@ -61470,7 +61471,7 @@ exports.default = useBanner;
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"4nycn":[function(require,module,exports) {
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./constants":"hB8jg"}],"4nycn":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$0e06 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
