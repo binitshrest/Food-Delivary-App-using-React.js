@@ -58,7 +58,7 @@ const Body = () => {
   ) : (
     <div className="body w-9/12 mx-auto">
       <h1 className="text-3xl font-bold my-4 ml-6">Best offers for you</h1>
-      <Corousels bannerInfo={bannerInfo} />
+      <Corousels bannerInfo={bannerInfo} /> 
       <h1 className="text-3xl font-bold my-4 ml-6">What's in your mind?</h1>
       {/* 2nd crousel */}
       <CorouselCusines cusinesInfo={cusinesInfo} />

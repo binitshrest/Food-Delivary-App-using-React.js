@@ -11,7 +11,7 @@ const useBanner = () => {
   const fetchData = async () => {
     const data = await fetch(Swiggy_API);
     const json = await data.json();
-
+    
     setBannerInfo(
       json?.data?.cards[0]?.card?.card?.gridElements?.infoWithStyle?.info
     );
