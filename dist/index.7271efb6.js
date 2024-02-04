@@ -61225,7 +61225,7 @@ const Body = ()=>{
     const fetchData = async ()=>{
         const data = await fetch((0, _constants.Swiggy_API));
         const json = await data.json(); //converting data into json;
-        setFilteredRestaurant(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+        setFilteredRestaurant(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     };
     //custom hook
     const bannerInfo = (0, _useBannerDefault.default)();
