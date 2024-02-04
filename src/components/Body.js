@@ -33,7 +33,7 @@ const Body = () => {
     const data = await fetch(Swiggy_API);
     const json = await data.json(); //converting data into json;
     setFilteredRestaurant(
-      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
   //custom hook

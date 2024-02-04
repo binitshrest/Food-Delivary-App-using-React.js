@@ -14,7 +14,7 @@ const useTopRestro = () => {
     const json = await data.json();
 
     setTopRestro(
-      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
 
