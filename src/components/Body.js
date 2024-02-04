@@ -33,7 +33,7 @@ const Body = () => {
     const data = await fetch(Swiggy_API);
     const json = await data.json(); //converting data into json;
     setFilteredRestaurant(
-      json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
   //custom hook
@@ -49,7 +49,7 @@ const Body = () => {
   // console.log(updateRes);
 
   // const { loggedInUser, setUserName } = useContext(UserContext);
-
+  console.log("bannerInfo", bannerInfo);
   return bannerInfo.length === 0 &&
     cusinesInfo.length === 0 &&
     topRestro.length === 0 &&
@@ -57,8 +57,10 @@ const Body = () => {
     <Shimmer />
   ) : (
     <div className="body w-9/12 mx-auto">
-      <h1 className="text-3xl font-bold my-4 ml-6">Best offers for you</h1>
-      <Corousels bannerInfo={bannerInfo} /> 
+      {/* {bannerInfo.length !== 0 && (
+        <h1 className="text-3xl font-bold my-4 ml-6">Best offers for you</h1>
+      )}
+      {bannerInfo.length !== 0 && <Corousels bannerInfo={bannerInfo} />} */}
       <h1 className="text-3xl font-bold my-4 ml-6">What's in your mind?</h1>
       {/* 2nd crousel */}
       <CorouselCusines cusinesInfo={cusinesInfo} />
@@ -82,6 +84,7 @@ const Body = () => {
             type="text"
             className="border shadow-md h-[40px] w-[250px] rounded-2xl p-4 outline-none text-base font-semibold text-gray-600"
             value={searchText}
+            placeholder="Search me (It works !!!)"
             onChange={(e) => {
               setSearchText(e.target.value);
             }}
